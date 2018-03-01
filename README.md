@@ -15,7 +15,7 @@ Each table is an array of simple objects. Here are the tables:
 * Hotitems - a list of ISBNs that should appear in front page
 * Reviews - user reviews of products
 
-# APIs
+## APIs
 
 API will be growing. Here are the documented ones:
 
