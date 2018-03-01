@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Healing Back Pain: The Mind-Body Connection",
+        "author": "John E. Sarno",
+        "isbn": "0446557684",
+        "price": 8.20,
+        "category": "health",
+        "inventory": 35
+    },
+    {
+        "title": "Time Pieces: A Dublin Memoir",
+        "author": "John Banville",
+        "isbn": "1524732834",
+        "price": 18.80,
+        "category": "memoir",
+        "inventory": 28
+    },
+    {
+        "title": "Plum Tea Crazy (A Tea Shop Mystery)",
+        "author": "Laura Childs",
+        "isbn": "0451489608",
+        "price": 18.00,
+        "category": "mystery",
+        "inventory": 19
+    },
+    {
+        "title": "Lethal Licorice (An Amish Candy Shop Mystery)",
+        "author": "Amanda Flower",
+        "isbn": "1496706412",
+        "price": 7.10,
+        "category": "mystery",
+        "inventory": 22
+    },
+    {
+        "title": "Programming Elixir 1.3: Functional |> Concurrent |> Pragmatic |> Fun",
+        "author": "Dave Thomas",
+        "isbn": "168050200X",
+        "price": 32.32,
+        "category": "computer",
+        "inventory": 12
+    }
+]
