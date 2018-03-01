@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 
-var express = require('express');
-var bodyParser = require('body-parser');
-var api = require('./api');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const api = require('./api');
 
-var app = express();
+let app = express();
+app.use(cors());
 
 app.use(bodyParser.json());
 
@@ -15,7 +17,7 @@ app.get('/listHotitems', async function(req, res) {
 
 async function start() {
     api.start();
-    app.listen(3570, () => console.log('Example app listening on port 3570!'));
+    app.listen(3570, () => console.log('nile-server listening on port 3570!'));
 }
 
 start();
