@@ -17,6 +17,20 @@ Each table is an array of simple objects. Here are the tables:
 
 ## APIs
 
-API will be growing. Here are the documented ones:
+`nile-server` only provides rudimentary APIs such as login/logout, simple filtering and CRUD operations. Here are the documented API endpoints:
 
 * `/listHotitems` - returns the list of products that should show up on front page
+
+## Filtering
+
+When requesting a list of items, such as a list of products, a filtering object can be passed in to narrow down the result. The object specifies the key(s) that should be filtered on, and the qualifying value(s). For example:
+
+```js
+// if the following filters are supplied when calling /listProducts, the API would return only books written by Dave that are in either mystery or computer categories.
+{
+    "category": ["mystery", "computer"],
+    "author": "^Dave"
+}
+```
+
+As shown above, a criteria can be a list of values or a regular expression. Ordinal comparison is not supported for now.
