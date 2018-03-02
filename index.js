@@ -38,7 +38,21 @@ app.post('/profile', (req, res) => {
     let result = api.profile(req.body.token);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(result));
-})
+});
+
+app.post('/purchase', (req, res) => {
+    let { token, items, payment } = req.body;
+    api.purchase(token, items, payment);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ success: true }));
+});
+
+app.post('/listshoppinghistory', (req, res) => {
+    let { token } = req.body;
+    let history = api.listShoppingHistory(token);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(history));
+});
 
 app.use((err, req, res, next) => {
     res.status(500);

@@ -75,9 +75,39 @@ function profile(token) {
     return prof;
 }
 
+function purchase(token, items, payment) {
+    let user = testLoginToken(token);
+    let sum = 0;
+    // verify item list and inventory, and ensure payment matches sum
+    for (let item of items) {   // eslint-disable-line
+        let { isbn, quantity } = item;
+        required({ isbn, quantity });
+        let product = db.products.find(p => p.isbn === isbn);
+        if (product == null) throw new Error('Item ' + isbn + ' not found');
+        if (product.inventory < quantity) throw new Error('Item ' + isbn + ' has insufficient inventory');
+        sum += product.price * quantity;
+    }
+    if (sum !== payment) throw new Error('Cart total of ' + sum + ' does not match payment');
+    // reduce inventory and push shopping to history
+    let now = new Date();
+    for (let item of items) {   // eslint-disable-line
+        let { isbn, quantity } = item;
+        let product = db.products.find(p => p.isbn === isbn);
+        product.inventory -= quantity;
+    }
+    db.shoppinghistory.push({ username: user.username, timestamp: now.getTime(), items: items });
+}
+
+function listShoppingHistory(token) {
+    let user = testLoginToken(token);
+    return db.shoppinghistory.filter(row => row.username === user.username);
+}
+
 exports.start = start;
 exports.listHotitems = listHotitems;
 exports.listProducts = listProducts;
 exports.listReviews = listReviews;
 exports.login = login;
 exports.profile = profile;
+exports.purchase = purchase;
+exports.listShoppingHistory = listShoppingHistory;
