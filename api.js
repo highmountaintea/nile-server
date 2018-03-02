@@ -6,10 +6,6 @@ async function start() {
     db = await dbapi.loadDB();
 }
 
-function listHotitems() {
-    return db.products.filter(prod => db.hotitems.includes(prod.isbn));
-}
-
 function filterList(list, filters) {
     if (filters == null) return list;
     return list.filter(item => {
@@ -27,10 +23,19 @@ function filterList(list, filters) {
     });
 }
 
+function listHotitems() {
+    return db.products.filter(prod => db.hotitems.includes(prod.isbn));
+}
+
 function listProducts(filters) {
     return filterList(db.products, filters);
+}
+
+function listReviews(filters) {
+    return filterList(db.reviews, filters);
 }
 
 exports.start = start;
 exports.listHotitems = listHotitems;
 exports.listProducts = listProducts;
+exports.listReviews = listReviews;
