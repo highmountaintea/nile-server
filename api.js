@@ -7,6 +7,10 @@ async function start() {
     db = await dbapi.loadDB();
 }
 
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+
 function filterList(list, filters) {
     if (filters == null) return list;
     return list.filter(item => {
@@ -37,17 +41,16 @@ function listReviews(filters) {
 }
 
 function generateLoginToken(username, expiration) {
-    return expiration + '|' + username;
+    return reverseString('' + expiration + '|' + username);
 }
 
 function parseLoginToken(token) {
-    let [expiration, username] = token.split('|');
-    return ({ username: username, expiration: expiration });
+    let [expiration, username] = reverseString(token).split('|');
+    return ({ username: username, expiration: parseInt(expiration) });
 }
 
 function testLoginToken(token) {
-    let parsedToken = parseLoginToken(token);
-    let { username, expiration } = parsedToken;
+    let { username, expiration } = parseLoginToken(token);
     required({ username, expiration });
     let now = new Date();
     if (expiration < now.getTime()) throw new Error("login token expired");
@@ -57,6 +60,7 @@ function testLoginToken(token) {
 }
 
 function login(username, password) {
+    required({ username, password });
     let user = db.users.find(u => u.username === username && u.password === password);
     if (user == null) throw new Error("Login failed");
     let now = new Date();
