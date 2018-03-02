@@ -28,6 +28,18 @@ app.post('/listreviews', (req, res) => {
     res.send(JSON.stringify(result));
 });
 
+app.post('/login', (req, res) => {
+    let result = api.login(req.body.username, req.body.password);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(result));
+});
+
+app.post('/profile', (req, res) => {
+    let result = api.profile(req.body.token);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(result));
+})
+
 app.use((err, req, res, next) => {
     res.status(500);
     res.setHeader('Content-Type', 'application/json');

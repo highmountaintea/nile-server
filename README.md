@@ -20,7 +20,11 @@ Each table is an array of simple objects. Here are the tables:
 
 `nile-server` only provides rudimentary APIs such as login/logout, simple filtering and CRUD operations. Here are the documented API endpoints:
 
-* `/listhotitems` - returns the list of products that should show up on front page
+* GET `/listhotitems` - returns the list of products that should show up on front page
+* POST `/listproducts` - returns the list of products. (POST body: filters)
+* POST `/listreviews` - returns the list of reviews. (POST body: filters)
+* POST `/login` - returns the login token if successful. (POST body: { username, password })
+* POST `/profile` - returns the user profile. (POST body: { token })
 
 ## Filtering
 
