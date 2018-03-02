@@ -1,10 +1,10 @@
 # Nile Project
 
-You are an ambitious software developer that wants to start an online bookstore. You want to create a proof of concept, code named `Nile Project`, using your favorite front-end framework. `nile-server` provides a sample back-end server to make it happen.
+You are an ambitious software developer that wants to start an online bookstore. You want to create a proof of concept, code named `Nile Project`, using your favorite frontend framework. `nile-server` provides a sample backend server to make it happen.
 
 ## Impetus
 
-With each front-end framework, such as React, mithril, and Vue, comes with the obligatory demo apps like TodoMVC. After going through tutorials and demo apps, I am usually at a loss what to do next. The `Nile Project` can bridge the gap between demo apps and real world. It provides a complete back-end API to allow building a sample online bookstore. For me psychologically, building an app that has login features and can be shared by multiple users seem more `real` than the typical demo apps.
+With each frontend framework, such as React, mithril, and Vue, comes with the obligatory demo apps like TodoMVC. Sometimes it's a little difficult progressing from demo apps to the real world. The `Nile Project` is different. It comes with a fully functional backend that supports multiple authenticated users, with real time interactivity. You can write a product review that can be viewed by other users; when you make a purchase, it is stored in your shopping history and impacts the inventory; when you are viewing a product page, the background AJAX can check the real time inventory to see if it's low. `nile-server` handles all the backend API so you can write a good application that solves problems faced in the real world.
 
 ## Usage
 
