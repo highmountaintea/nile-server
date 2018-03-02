@@ -1,6 +1,19 @@
-# Nile
+# Nile Project
 
 You are an ambitious software developer that wants to start an online bookstore. You want to create a proof of concept, code named `Nile Project`, using your favorite front-end framework. `nile-server` provides a sample back-end server to make it happen.
+
+## Impetus
+
+With each front-end framework, such as React, mithril, and Vue, comes with the obligatory demo apps like TodoMVC. After going through tutorials and demo apps, I am usually at a loss what to do next. The `Nile Project` can bridge the gap between demo apps and real world. It provides a complete back-end API to allow building a sample online bookstore. For me psychologically, building an app that has login features and can be shared by multiple users seem more `real` than the typical demo apps.
+
+## Usage
+
+To run nile-server, run this in terminal:
+```js
+npx nile-server
+```
+
+It pulls nile-server from npm and runs it on port 3570. Now you can use Postman to make request against it and start writing your SPA.
 
 ## Architecture
 
