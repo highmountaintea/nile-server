@@ -51,7 +51,7 @@ function testLoginToken(token) {
     required({ username, expiration });
     let now = new Date();
     if (expiration < now.getTime()) throw new Error("login token expired");
-    let user = db.users.filter(u => u.username === username);
+    let user = db.users.find(u => u.username === username);
     if (user == null) throw new Error("no user found");
     return user;
 }
@@ -60,7 +60,7 @@ function login(username, password) {
     let user = db.users.find(u => u.username === username && u.password === password);
     if (user == null) throw new Error("Login failed");
     let now = new Date();
-    let expiration = now.getTime() - 60 * 60000;
+    let expiration = now.getTime() + 60 * 60000;
     return generateLoginToken(user.username, expiration);
 }
 

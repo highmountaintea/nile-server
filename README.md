@@ -26,6 +26,14 @@ Each table is an array of simple objects. Here are the tables:
 * POST `/login` - returns the login token if successful. (POST body: { username, password })
 * POST `/profile` - returns the user profile. (POST body: { token })
 
+### Shopping cart
+
+No API is provided for storing shopping carts. Store them in memory or web storage for now.
+
+### Security
+
+`nile-server` simulates token based authentication, which is a versatile security model. However, the token is not encrypted, so it is only suitable for a sample app, and please don't put any sensitive data into this database.
+
 ## Filtering
 
 When requesting a list of items, such as a list of products, a filtering object can be passed in to narrow down the result. The object specifies the key(s) that should be filtered on, and the qualifying value(s). For example:
