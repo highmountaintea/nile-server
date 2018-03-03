@@ -7,7 +7,7 @@ async function loadDB() {
     db.products = JSON.parse(await fs.readFile(path.join(__dirname, 'db/products.json'), 'utf8'));
     db.reviews = JSON.parse(await fs.readFile(path.join(__dirname, 'db/reviews.json'), 'utf8'));
     db.hotitems = JSON.parse(await fs.readFile(path.join(__dirname, 'db/hotitems.json'), 'utf8'));
-    db.shoppinghistory = [];
+    db.shoppinghistory = JSON.parse(await fs.readFile(path.join(__dirname, 'db/shoppinghistory.json'), 'utf8'));
     return db;
 }
 
