@@ -40,7 +40,9 @@ Each table is an array of simple objects. Here are the tables:
 * POST `/login` - returns the login token if successful. (POST body: { username, password })
 * POST `/profile` - returns the user profile. (POST body: { token })
 * POST `/purchase` - purchase items. (POST body: { token, items, payment })
+* POST `/supplyinventory` - replenish inventory items. (POST body: { items })
 * POST `/listshoppinghistory` - returns the list of purchase history for the logged in user. (POST body: { token })
+* POST `/addreview` - add a review. (POST body: { token, isbn, rating, title, text })
 
 ### Shopping cart
 

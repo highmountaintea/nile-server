@@ -115,10 +115,34 @@ function purchase(token, items, payment) {
     db.shoppinghistory.push({ username: user.username, timestamp: now.getTime(), items: items, payment });
 }
 
+function supplyInventory(items) {
+    // ensure all items are valid
+    for (let items of items) {
+        let { isbn, quantity } = item;
+        required({ isbn, quantity });
+        let product = db.products.find(p => p.isbn === isbn);
+        if (product == null) throw new Error('Item ' + isbn + ' not found');
+    }
+    // now add inventory
+    for (let items of items) {
+        let { isbn, quantity } = item;
+        let product = db.products.find(p => p.isbn === isbn);
+        product.inventory += quantity;
+    }
+}
+
 function listShoppingHistory(token) {
     required({ token });
     let user = testLoginToken(token);
     return db.shoppinghistory.filter(row => row.username === user.username);
+}
+
+function addReview(token, isbn, rating, title, text) {
+    required({ token, isbn, rating, title, text });
+    let user = testLoginToken(token);
+    if (!(rating >= 1 && rating <= 5)) throw new Error('invalid rating');
+    let now = new Date();
+    db.reviews.push({ username: user.username, timestamp: now.getTime(), isbn, rating, title, text });
 }
 
 exports.start = start;
@@ -129,4 +153,6 @@ exports.listReviews = listReviews;
 exports.login = login;
 exports.profile = profile;
 exports.purchase = purchase;
+exports.supplyInventory = supplyInventory;
 exports.listShoppingHistory = listShoppingHistory;
+exports.addReview = addReview;

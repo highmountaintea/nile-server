@@ -53,11 +53,25 @@ app.post('/purchase', (req, res) => {
     res.send(JSON.stringify({ success: true }));
 });
 
+app.post('/supplyinventory', (req, res) => {
+    let { items } = req.body;
+    api.supplyInventory(items);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ success: true }));
+});
+
 app.post('/listshoppinghistory', (req, res) => {
     let { token } = req.body;
     let history = api.listShoppingHistory(token);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(history));
+});
+
+app.post('/addreview', (req, res) => {
+    let { token, isbn, rating, title, text } = req.body;
+    api.addReview(token, isbn, rating, title, text);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ success: true }));
 });
 
 app.use((err, req, res, next) => {
