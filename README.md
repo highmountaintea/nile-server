@@ -34,6 +34,7 @@ Each table is an array of simple objects. Here are the tables:
 `nile-server` only provides rudimentary APIs such as login/logout, simple filtering and CRUD operations. Here are the documented API endpoints:
 
 * GET `/listhotitems` - returns the list of products that should show up on front page
+* GET `/listcategories` - returns the list of product categories
 * POST `/listproducts` - returns the list of products. (POST body: filters)
 * POST `/listreviews` - returns the list of reviews. (POST body: filters)
 * POST `/login` - returns the login token if successful. (POST body: { username, password })
@@ -62,3 +63,11 @@ When requesting a list of items, such as a list of products, a filtering object 
 ```
 
 As shown above, a criteria can be a list of values or a regular expression. Ordinal comparison is not supported for now.
+
+If the SPA wants to support text search, it needs to convert the search terms into regular expression. Let's say a user typed `albert einstein` in the search field. This can be converted into regular expression string "albert[^]+einstein". If you want to search `albert einstein` across all fields instead of just author or title, you should use the special field `textContent`. The following filter would perform a case insensitive search across all product fields:
+
+```js
+{
+    "textContent": "albert[^]+einstein"
+}
+```

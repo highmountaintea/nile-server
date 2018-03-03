@@ -16,6 +16,12 @@ app.get('/listhotitems', (req, res) => {
     res.send(JSON.stringify(result));
 });
 
+app.get('/listcategories', (req, res) => {
+    let result = api.listCategories();
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(result));
+});
+
 app.post('/listproducts', (req, res) => {
     let result = api.listProducts(req.body);
     res.setHeader('Content-Type', 'application/json');

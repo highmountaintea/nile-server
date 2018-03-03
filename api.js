@@ -11,17 +11,26 @@ function reverseString(str) {
     return str.split('').reverse().join('');
 }
 
+function textContent(obj) {
+    let result = '';
+    let keys = Object.keys(obj);
+    for (let key of keys) {
+        result += '' + key + ':\n' + obj[key] + '\n';
+    }
+    return result;
+}
+
 function filterList(list, filters) {
     if (filters == null) return list;
     return list.filter(item => {
         let keys = Object.keys(filters);
         for (let key of keys) {
-            let value = item[key];
+            let value = key === 'textContent' ? textContent(item) : item[key];
             let filter = filters[key];
             if (Array.isArray(filter)) {
                 if (!filter.includes(value)) return false;
             } else {
-                if (!value.toString().match(filter)) return false;
+                if (!value.toString().match(new RegExp(filter, 'i'))) return false;
             }
         }
         return true;
@@ -30,6 +39,14 @@ function filterList(list, filters) {
 
 function listHotitems() {
     return db.products.filter(prod => db.hotitems.includes(prod.isbn));
+}
+
+function listCategories() {
+    let keys = {};
+    for (let product of db.products) {
+        keys[product.category] = true;
+    }
+    return Object.keys(keys);
 }
 
 function listProducts(filters) {
@@ -95,16 +112,18 @@ function purchase(token, items, payment) {
         let product = db.products.find(p => p.isbn === isbn);
         product.inventory -= quantity;
     }
-    db.shoppinghistory.push({ username: user.username, timestamp: now.getTime(), items: items });
+    db.shoppinghistory.push({ username: user.username, timestamp: now.getTime(), items: items, payment });
 }
 
 function listShoppingHistory(token) {
+    required({ token });
     let user = testLoginToken(token);
     return db.shoppinghistory.filter(row => row.username === user.username);
 }
 
 exports.start = start;
 exports.listHotitems = listHotitems;
+exports.listCategories = listCategories;
 exports.listProducts = listProducts;
 exports.listReviews = listReviews;
 exports.login = login;
