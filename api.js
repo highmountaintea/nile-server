@@ -94,8 +94,10 @@ function profile(token) {
 
 function purchase(token, items, payment) {
     let user = testLoginToken(token);
-    let sum = 0;
+    // check balance
+    if (payment > user.balance) throw new Error('' + user.username + ' has insufficient fund. Balance = ' + user.balance);
     // verify item list and inventory, and ensure payment matches sum
+    let sum = 0;
     for (let item of items) {   // eslint-disable-line
         let { isbn, quantity } = item;
         required({ isbn, quantity });
@@ -112,6 +114,7 @@ function purchase(token, items, payment) {
         let product = db.products.find(p => p.isbn === isbn);
         product.inventory -= quantity;
     }
+    user.balance -= payment;
     db.shoppinghistory.push({ username: user.username, timestamp: now.getTime(), items: items, payment });
 }
 
