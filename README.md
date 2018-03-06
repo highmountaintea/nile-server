@@ -50,7 +50,13 @@ No API is provided for storing shopping carts. Store them in memory or web stora
 
 ### Security
 
-`nile-server` simulates token based authentication, which is a versatile security model. However, the token is not encrypted, so it is only suitable for a sample app, and please don't put any sensitive data into this database.
+`nile-server` simulates token based authentication, which is a versatile security model. However, the token is not encrypted, so it is only suitable for a sample app, and please don't put any sensitive data into this database. Here are the username/password that would work for the `/login` endpoint:
+
+* confucius / confucius2
+* newton / newton2
+* curie / curie2
+* mozart / mozart2
+* ada / ada2
 
 ## Filtering
 
