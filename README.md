@@ -44,6 +44,8 @@ Each table is an array of simple objects. Here are the tables:
 * POST `/listshoppinghistory` - returns the list of purchase history for the logged in user. (POST body: { token })
 * POST `/addreview` - add a review. (POST body: { token, isbn, rating, title, text })
 
+**API Examples**: [here](https://github.com/johnfliu818/nile-server/blob/master/api-examples.md) are some examples of using the API.
+
 ### Shopping cart
 
 No API is provided for storing shopping carts. Store them in memory or web storage for now.
