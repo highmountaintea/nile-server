@@ -94,5 +94,45 @@
         "price": 15.70,
         "category": "religion",
         "inventory": 7
+    },
+    {
+        "title": "A Simple Guide to Tackling Your Digital Photo Mess: Using Windows 10",
+        "author": "Mollie M Bartelt",
+        "isbn": "0997813644",
+        "price": 13.05,
+        "category": "computer",
+        "inventory": 1
+    },
+    {
+        "title": "Get Cooking: 150 Simple Recipes to Get You Started in the Kitchen",
+        "author": "Mollie Katzen",
+        "isbn": "0061732435",
+        "price": 11.22,
+        "category": "cooking",
+        "inventory": 5
+    },
+    {
+        "title": "The Girl Who Knew Too Much",
+        "author": "Amanda Quick",
+        "isbn": "051515637X",
+        "price": 5.99,
+        "category": "mystery",
+        "inventory": 12
+    },
+    {
+        "title": "A Beautiful Blue Death: The First Charles Lenox Mystery (Charles Lenox Mysteries)",
+        "author": "Charles Finch",
+        "isbn": "1250161649",
+        "price": 9.50,
+        "category": "mystery",
+        "inventory": 7
+    },
+    {
+        "title": "Changes That Heal",
+        "author": "Henry Cloud",
+        "isbn": "0310606314",
+        "price": 9.98,
+        "category": "religion",
+        "inventory": 4
     }
 ]
