@@ -38,5 +38,61 @@
         "price": 32.32,
         "category": "computer",
         "inventory": 12
+    },
+    {
+        "title": "Python Programming: An Introduction to Computer Science, 3rd Edition",
+        "author": "John Zelle",
+        "isbn": "1590282752",
+        "price": 43.10,
+        "category": "computer",
+        "inventory": 16
+    },
+    {
+        "title": "Killing Kryptonite: Destroy What Steals Your Strength",
+        "author": "John Bevere",
+        "isbn": "1937558118",
+        "price": 13.52,
+        "category": "self-improvement",
+        "inventory": 2
+    },
+    {
+        "title": "Ben Hogan's Five Lessons: The Modern Fundamentals of Golf",
+        "author": "Ben Hogan",
+        "isbn": "9780671612979",
+        "price": 9.15,
+        "category": "golf",
+        "inventory": 8
+    },
+    {
+        "title": "The Capitalist Code: It Can Save Your Life and Make You Very Rich",
+        "author": "Ben Stein",
+        "isbn": "1630060844",
+        "price": 13.62,
+        "category": "finance",
+        "inventory": 11
+    },
+    {
+        "title": "We Are Never Meeting in Real Life.: Essays",
+        "author": "Samantha Irby",
+        "isbn": "1101912197",
+        "price": 12.90,
+        "category": "humor",
+        "inventory": 3
+    },
+    {
+        "title": "Stone Rules: A Stone Brothers novel",
+        "author": "Samantha Christy",
+        "isbn": "1539037134",
+        "price": 13.02,
+        "category": "romance",
+        "inventory": 7
+    },
+    {
+        "title": "Everything Happens for a Reason: And Other Lies I've Loved",
+        "author": "Kate Bowler",
+        "isbn": "0399592067",
+        "price": 15.70,
+        "category": "religion",
+        "inventory": 7
     }
 ]

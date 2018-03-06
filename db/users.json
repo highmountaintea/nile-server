@@ -1,7 +1,7 @@
 [
-    { "username": "confucius", "password": "confucius2" },
-    { "username": "newton", "password": "newton2" },
-    { "username": "curie", "password": "curie2" },
-    { "username": "mozart", "password": "mozart2" },
-    { "username": "ada", "password": "ada2" }
+    { "username": "confucius", "password": "confucius2", "balance": 74.02 },
+    { "username": "newton", "password": "newton2", "balance": 90.00 },
+    { "username": "curie", "password": "curie2", "balance": 85.75 },
+    { "username": "mozart", "password": "mozart2", "balance": 26.10 },
+    { "username": "ada", "password": "ada2", "balance": 65.00 }
 ]
