@@ -15,6 +15,11 @@ npx nile-server
 
 It pulls nile-server from npm and runs it on port 3570. Now you can use Postman to make request against it and start writing your SPA.
 
+## More Documentations
+
+* [Example API requests](https://github.com/johnfliu818/nile-server/blob/master/api-examples.md)
+* [Filtering data](https://github.com/johnfliu818/nile-server/blob/master/filtering.md)
+
 ## Architecture
 
 `nile-server` tries to provide a simple yet complete API to allow development of a sample online bookstore. It stores the whole database in memory, so everything is wiped clean everytime the server is rebooted. A few JSON files are used to seed the database so it has some data to start with.
@@ -60,24 +65,6 @@ No API is provided for storing shopping carts. Store them in memory or web stora
 * mozart / mozart2
 * ada / ada2
 
-## Filtering
+### Sample Implementation
 
-When requesting a list of items, such as a list of products, a filtering object can be passed in to narrow down the result. The object specifies the key(s) that should be filtered on, and the qualifying value(s). For example:
-
-```js
-// if the following filters are supplied when calling /listProducts, the API would return only books written by Dave that are in either mystery or computer categories.
-{
-    "category": ["mystery", "computer"],
-    "author": "^Dave"
-}
-```
-
-As shown above, a criteria can be a list of values or a regular expression. Ordinal comparison is not supported for now.
-
-If the SPA wants to support text search, it needs to convert the search terms into regular expression. Let's say a user typed `albert einstein` in the search field. This can be converted into regular expression string "albert[^]+einstein". If you want to search `albert einstein` across all fields instead of just author or title, you should use the special field `textContent`. The following filter would perform a case insensitive search across all product fields:
-
-```js
-{
-    "textContent": "albert[^]+einstein"
-}
-```
+[nile-mithril](https://github.com/johnfliu818/nile-mithril) is a fully functioning sample application that uses nile-server. Go to [its GitHub Page](https://github.com/johnfliu818/nile-mithril) to view its source.

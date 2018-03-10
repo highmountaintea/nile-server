@@ -1,4 +1,4 @@
-# API Examples
+# nile-server API Examples
 
 This document demonstrates a few API requests a typical Nile application would make
 
