@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const api = require('./api');
 
+let port = process.env.PORT || 3570;
+
 let app = express();
 app.use(cors());
 
@@ -82,7 +84,7 @@ app.use((err, req, res, next) => {
 
 async function start() {
     api.start();
-    app.listen(3570, () => console.log('nile-server listening on port 3570!'));
+    app.listen(port, () => console.log('nile-server listening on port ' + port + '!'));
 }
 
 start();
