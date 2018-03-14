@@ -67,4 +67,4 @@ No API is provided for storing shopping carts. Store them in memory or web stora
 
 ### Sample Implementation
 
-[nile-mithril](https://github.com/johnfliu818/nile-mithril) is a fully functioning sample application that uses nile-server. Go to [its GitHub Page](https://github.com/johnfliu818/nile-mithril) to view its source.
+[nile-mithril](https://www.npmjs.com/package/nile-mithril) is a fully functioning sample application that uses nile-server. Go to [its GitHub Page](https://github.com/johnfliu818/nile-mithril) to view its source.
