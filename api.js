@@ -144,6 +144,13 @@ function supplyInventory(items) {
     }
 }
 
+function addBalance(token, cardNo, amount) {
+    required({ token, cardNo, amount});
+    let user = testLoginToken(token);
+    if (cardNo != '5555666677778888') throw new Error('Invalid credit card');
+    user.balance += amount;
+}
+
 function listShoppingHistory(token) {
     required({ token });
     let user = testLoginToken(token);
@@ -167,5 +174,6 @@ exports.login = login;
 exports.profile = profile;
 exports.purchase = purchase;
 exports.supplyInventory = supplyInventory;
+exports.addBalance = addBalance;
 exports.listShoppingHistory = listShoppingHistory;
 exports.addReview = addReview;

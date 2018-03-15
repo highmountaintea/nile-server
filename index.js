@@ -62,6 +62,13 @@ app.post('/supplyinventory', (req, res) => {
     res.send(JSON.stringify({ success: true }));
 });
 
+app.post('/addbalance', (req, res) => {
+    let { token, cardNo, amount } = req.body;
+    api.addBalance(token, cardNo, amount);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ success: true }));
+});
+
 app.post('/listshoppinghistory', (req, res) => {
     let { token } = req.body;
     let history = api.listShoppingHistory(token);

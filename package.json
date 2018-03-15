@@ -1,6 +1,6 @@
 {
   "name": "nile-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "backend server for Nile",
   "main": "index.js",
   "scripts": {

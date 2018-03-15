@@ -66,6 +66,18 @@ This document demonstrates a few API requests a typical Nile application would m
 }
 ```
 
+### Add Balance
+
+`POST localhost:3570/addbalance`
+
+```js
+{
+	"token": "trazom|1327951630251",
+	"cardNo": "5555666677778888",
+	"amount": 75.00
+}
+```
+
 ### List Shopping History
 
 `POST localhost:3570/listshoppinghistory`
