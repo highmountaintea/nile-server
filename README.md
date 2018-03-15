@@ -17,8 +17,8 @@ It pulls nile-server from npm and runs it on port 3570. Now you can use Postman 
 
 ## More Documentations
 
-* [Example API requests](https://github.com/johnfliu818/nile-server/blob/master/api-examples.md)
-* [Filtering data](https://github.com/johnfliu818/nile-server/blob/master/filtering.md)
+* [Example API requests](https://github.com/highmountaintea/nile-server/blob/master/api-examples.md)
+* [Filtering data](https://github.com/highmountaintea/nile-server/blob/master/filtering.md)
 * A [Sample implementation](http://nile-mithril.s3-website.us-east-2.amazonaws.com) - nile-mithril
 
 ## Architecture
@@ -51,7 +51,7 @@ Each table is an array of simple objects. Here are the tables:
 * POST `/listshoppinghistory` - returns the list of purchase history for the logged in user. (POST body: { token })
 * POST `/addreview` - add a review. (POST body: { token, isbn, rating, title, text })
 
-**API Examples**: [here](https://github.com/johnfliu818/nile-server/blob/master/api-examples.md) are some examples of using the API.
+**API Examples**: [here](https://github.com/highmountaintea/nile-server/blob/master/api-examples.md) are some examples of using the API.
 
 ### Shopping cart
 
@@ -69,4 +69,4 @@ No API is provided for storing shopping carts. Store them in memory or web stora
 
 ### Sample Implementation
 
-[nile-mithril](https://www.npmjs.com/package/nile-mithril) is a fully functioning sample application that uses nile-server. Go to [its GitHub Page](https://github.com/johnfliu818/nile-mithril) to view its source.
+[nile-mithril](https://www.npmjs.com/package/nile-mithril) is a fully functioning sample application that uses nile-server. Go to [its GitHub Page](https://github.com/highmountaintea/nile-mithril) to view its source.

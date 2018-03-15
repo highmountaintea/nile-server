@@ -1,6 +1,6 @@
 {
   "name": "nile-server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "backend server for Nile",
   "main": "index.js",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnfliu818/nile-server.git"
+    "url": "git+https://github.com/highmountaintea/nile-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johnfliu818/nile-server/issues"
+    "url": "https://github.com/highmountaintea/nile-server/issues"
   },
-  "homepage": "https://github.com/johnfliu818/nile-server#readme",
+  "homepage": "https://github.com/highmountaintea/nile-server#readme",
   "dependencies": {
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
