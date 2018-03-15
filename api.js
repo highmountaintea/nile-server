@@ -92,6 +92,14 @@ function profile(token) {
     return prof;
 }
 
+function randomlyResupply() {
+    let i = Math.floor(Math.random() * db.products.length);
+    let product = db.products[i];
+    if (product.inventory <= 2) {
+        product.inventory += (2 + Math.floor(Math.random() * 7));
+    }
+}
+
 function purchase(token, items, payment) {
     let user = testLoginToken(token);
     // check balance
@@ -116,6 +124,8 @@ function purchase(token, items, payment) {
     }
     user.balance -= payment;
     db.shoppinghistory.push({ username: user.username, timestamp: now.getTime(), items: items, payment });
+    // randomly respply
+    randomlyResupply();
 }
 
 function supplyInventory(items) {
