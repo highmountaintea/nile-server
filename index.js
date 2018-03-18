@@ -12,12 +12,6 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use((req, res, next) => {
-    console.log(req.originalUrl);
-    console.log(req.body);
-    next();
-});
-
 app.get('/listhotitems', (req, res) => {
     let result = api.listHotitems();
     res.setHeader('Content-Type', 'application/json');
