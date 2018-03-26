@@ -1,4 +1,5 @@
 # Nile Project
+[![NPM](https://nodei.co/npm/nile-server.png)](https://npmjs.org/package/nile-server)
 
 You are an ambitious software developer that wants to start an online bookstore. You want to create a proof of concept, code named `Nile Project`, using your favorite frontend framework. `nile-server` provides a sample backend server to make it happen.
 

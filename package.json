@@ -1,6 +1,6 @@
 {
   "name": "nile-server",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "backend server for Nile",
   "keywords": [
     "online bookstore",
@@ -37,5 +37,10 @@
     "fs-extra": "^5.0.0",
     "required-pm": "^1.0.10",
     "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0"
   }
 }
