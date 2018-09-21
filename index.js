@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+require('dotenv');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
